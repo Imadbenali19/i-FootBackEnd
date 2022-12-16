@@ -10,4 +10,6 @@ public interface TerrainService {
 	Terrain updateTerrain(Terrain t);
 	void deleteTerrain(Long id);
 	List<Terrain> getTerrains();
+	
+	Terrain getTerrain(Long id);
 }
