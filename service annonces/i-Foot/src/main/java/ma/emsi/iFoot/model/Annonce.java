@@ -21,5 +21,7 @@ public class Annonce {
 	private String ville;
 	private String zone;
 	private Date date;
+	
+	private Terrain terrain;
 
 }
