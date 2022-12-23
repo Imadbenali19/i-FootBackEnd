@@ -1,26 +1,20 @@
 package ma.emsi.iFoot.model;
 
-import java.util.List;
+import java.util.Date;
 
 import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Document("terrains")
+@Document("photos")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Terrain {
+public class Photo {
 	@Id
 	private Long id;
-	private String nom;
-	private String adresse;
-	private int capacity;
-	
-	private List<Photo> photos;
-
+	private String url;
 }
