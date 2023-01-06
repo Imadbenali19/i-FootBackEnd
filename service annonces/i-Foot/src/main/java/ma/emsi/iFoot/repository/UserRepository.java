@@ -6,7 +6,7 @@ import org.springframework.stereotype.Repository;
 import ma.emsi.iFoot.model.User;
 
 @Repository
-public interface UserRepository extends MongoRepository<User, Long> {
+public interface UserRepository extends MongoRepository<User, Integer> {
 
 	User findByUsername(String username);
 }

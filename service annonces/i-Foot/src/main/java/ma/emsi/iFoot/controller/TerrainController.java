@@ -34,7 +34,7 @@ public class TerrainController {
 	}
 	
 	@GetMapping("/get/{id}")
-	public ResponseEntity<Terrain> getTerrain(@PathVariable("id") Long id){
+	public ResponseEntity<Terrain> getTerrain(@PathVariable("id") int id){
 		Terrain terrain=terrainService.getTerrain(id);
 		return new ResponseEntity<>(terrain,HttpStatus.OK);
 	}
@@ -54,7 +54,7 @@ public class TerrainController {
 	
 	
 	@DeleteMapping("/delete/{id}")
-	public ResponseEntity<?> deleteTerrain(@PathVariable("id") Long id){
+	public ResponseEntity<?> deleteTerrain(@PathVariable("id") int id){
 		terrainService.deleteTerrain(id);
 		return new ResponseEntity<>(HttpStatus.OK );
 	}

@@ -20,8 +20,12 @@ public class AnnonceServiceImpl implements AnnonceService {
 	@Autowired
 	private DemandeRepository demandeRepository;
 	
+	@Autowired
+	private SequenceGeneratorService sequenceGeneratorService;
+	
 	@Override
 	public Annonce createAnnonce(Annonce annonce) {
+		annonce.setId(sequenceGeneratorService.getSequenceNumber(Annonce.SEQUENCE_NAME));
 		return annonceRepository.save(annonce);
 	}
 
@@ -40,12 +44,12 @@ public class AnnonceServiceImpl implements AnnonceService {
 	}
 
 	@Override
-	public void deleteAnnonce(Long id) {
+	public void deleteAnnonce(int id) {
 		annonceRepository.deleteById(id);
 	}
 
 	@Override
-	public Annonce getAnnonce(Long id) {
+	public Annonce getAnnonce(int id) {
 		return annonceRepository.findById(id).get();
 	}
 
@@ -62,6 +66,7 @@ public class AnnonceServiceImpl implements AnnonceService {
 		demande.setEtat("Traitée");
 		demande.setDate(new Date());
 		try {
+			demande.setId(sequenceGeneratorService.getSequenceNumber(Demande.SEQUENCE_NAME));
 			demandeRepository.save(demande);
 			return true;
 		}catch(Exception e){

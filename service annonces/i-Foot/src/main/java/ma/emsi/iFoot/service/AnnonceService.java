@@ -11,8 +11,8 @@ public interface AnnonceService {
 
 	Annonce createAnnonce(Annonce annonce);
 	Annonce updateAnnonce(Annonce annonce);
-	void deleteAnnonce(Long id);
-	Annonce getAnnonce(Long id);
+	void deleteAnnonce(int id);
+	Annonce getAnnonce(int id);
 	List<Annonce> getAnnonces();
 	
 	boolean requestJoinAnnonce(User user, Annonce annonce);

@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import ma.emsi.iFoot.model.Demande;
 
 @Repository
-public interface DemandeRepository extends MongoRepository<Demande, Long> {
+public interface DemandeRepository extends MongoRepository<Demande, Integer> {
 
 }

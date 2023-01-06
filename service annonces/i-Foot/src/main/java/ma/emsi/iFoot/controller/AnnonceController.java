@@ -31,7 +31,7 @@ public class AnnonceController {
 	}
 	
 	@GetMapping("/get/{id}")
-	public ResponseEntity<Annonce> getAnnonce(@PathVariable("id") Long id){
+	public ResponseEntity<Annonce> getAnnonce(@PathVariable("id") int id){
 		Annonce annonce=annonceService.getAnnonce(id);
 		return new ResponseEntity<>(annonce,HttpStatus.OK);
 	}
@@ -56,7 +56,7 @@ public class AnnonceController {
 	}
 	
 	@DeleteMapping("/delete/{id}")
-	public ResponseEntity<?> deleteAnnonce(@PathVariable("id") Long id){
+	public ResponseEntity<?> deleteAnnonce(@PathVariable("id") int id){
 		annonceService.deleteAnnonce(id);
 		return new ResponseEntity<>(HttpStatus.OK );
 	}

@@ -7,6 +7,6 @@ import ma.emsi.iFoot.model.User;
 public interface UserService {
 
 	User createUser(User user);
-	User getUser(Long id);
+	User getUser(int id);
 	List<User> getUsers();
 }

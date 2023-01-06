@@ -15,8 +15,12 @@ public class TerrainServiceImpl implements TerrainService {
 	@Autowired
 	private TerrainRepository terrainRepository;
 	
+	@Autowired
+	private SequenceGeneratorService sequenceGeneratorService;
+	
 	@Override
 	public Terrain addTerrain(Terrain t) {
+		t.setId(sequenceGeneratorService.getSequenceNumber(Terrain.SEQUENCE_NAME));
 		return terrainRepository.save(t);
 	}
 
@@ -35,7 +39,7 @@ public class TerrainServiceImpl implements TerrainService {
 	}
 
 	@Override
-	public void deleteTerrain(Long id) {
+	public void deleteTerrain(int id) {
 		terrainRepository.delete(terrainRepository.findById(id).get());
 		
 	}
@@ -46,7 +50,7 @@ public class TerrainServiceImpl implements TerrainService {
 	}
 
 	@Override
-	public Terrain getTerrain(Long id) {
+	public Terrain getTerrain(int id) {
 		return terrainRepository.findById(id).get();
 	}
 

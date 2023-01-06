@@ -8,8 +8,8 @@ public interface TerrainService {
 
 	Terrain addTerrain(Terrain t);
 	Terrain updateTerrain(Terrain t);
-	void deleteTerrain(Long id);
+	void deleteTerrain(int id);
 	List<Terrain> getTerrains();
 	
-	Terrain getTerrain(Long id);
+	Terrain getTerrain(int id);
 }
