@@ -1,0 +1,19 @@
+spring:
+  Cloud:
+   gateway:
+    routes:
+      - id : path1
+        uri : http://localhost:8081
+        predicates : 
+          - Path= /terrains/**
+      - id : path2
+        uri : http://localhost:8082
+        predicates : 
+          - Path= "/annonces/**
+    discovery : 
+      enabled : false
+   
+server :
+ port: 8085             
+      
+    
